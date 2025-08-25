@@ -167,9 +167,8 @@
 
     <!-- Modal de elemento seleccionado -->
     <ElementModal
-      v-if="selectedElement"
+      v-model="showModal"
       :element="selectedElement"
-      @close="selectedElement = null"
     />
   </div>
 </template>
@@ -204,9 +203,11 @@ const actinides = computed(() =>
 )
 
 const selectedElement = ref<Element | null>(null)
+const showModal = ref(false)
 
 const selectElement = (element: Element) => {
   selectedElement.value = element
+  showModal.value = true
 }
 
 const getCategoryColor = (category: string): string => {
