@@ -10,8 +10,8 @@
 
     <!-- Filtros -->
     <div class="bg-white rounded-xl shadow-lg p-6">
-      <div class="flex flex-wrap gap-2">
-        <span class="text-sm font-medium text-gray-700">Filtrar por:</span>
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="text-sm font-medium text-gray-700 py-2">Filtrar por:</span>
         <button
           v-for="category in curiosityCategories"
           :key="category.value"
