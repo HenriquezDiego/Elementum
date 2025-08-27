@@ -63,17 +63,19 @@
             {{ group }}
           </div>
 
-          <!-- Elementos principales (períodos 1-7, grupos 1-18) -->
-          <div
-            v-for="element in mainElements"
-            :key="element.atomicNumber"
-            @click="selectElement(element)"
-            class="element-card"
-            :class="[
-              selectedCategory === 'all' || selectedCategory === element.category
-                ? 'opacity-100 scale-100'
-                : 'opacity-30 scale-95'
-            ]"
+                                           <!-- Elementos principales (períodos 1-7, grupos 1-18) -->
+            <div
+              v-for="element in mainElements"
+              :key="element.atomicNumber"
+              @click="selectElement(element)"
+              class="element-card"
+              :class="[
+                selectedCategory === 'all' 
+                  ? 'opacity-100 scale-100'
+                  : selectedCategory === element.category
+                  ? 'opacity-100 scale-100'
+                  : 'opacity-60 scale-100 dimmed-element'
+              ]"
             :style="{
               backgroundColor: getCategoryColor(element.category),
               gridColumn: element.group + 1,
@@ -86,17 +88,19 @@
             <div class="mass">{{ element.atomicMass }}</div>
           </div>
 
-                     <!-- Lantánidos (período 6, grupo 3) -->
-           <div
-             v-for="element in lanthanides"
-             :key="element.atomicNumber"
-             @click="selectElement(element)"
-             class="element-card lanthanide"
-             :class="[
-               selectedCategory === 'all' || selectedCategory === element.category
-                 ? 'opacity-100 scale-100'
-                 : 'opacity-30 scale-95'
-             ]"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <!-- Lantánidos (período 6, grupo 3) -->
+                  <div
+                    v-for="element in lanthanides"
+                    :key="element.atomicNumber"
+                    @click="selectElement(element)"
+                    class="element-card lanthanide"
+                    :class="[
+                      selectedCategory === 'all' 
+                        ? 'opacity-100 scale-100'
+                        : selectedCategory === element.category
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-60 scale-100 dimmed-element'
+                    ]"
              :style="{
                backgroundColor: getCategoryColor(element.category),
                gridColumn: 4 + (element.atomicNumber - 58),
@@ -109,17 +113,19 @@
              <div class="mass">{{ element.atomicMass }}</div>
            </div>
 
-                     <!-- Actínidos (período 7, grupo 3) -->
-           <div
-             v-for="element in actinides"
-             :key="element.atomicNumber"
-             @click="selectElement(element)"
-             class="element-card actinide"
-             :class="[
-               selectedCategory === 'all' || selectedCategory === element.category
-                 ? 'opacity-100 scale-100'
-                 : 'opacity-30 scale-95'
-             ]"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <!-- Actínidos (período 7, grupo 3) -->
+                  <div
+                    v-for="element in actinides"
+                    :key="element.atomicNumber"
+                    @click="selectElement(element)"
+                    class="element-card actinide"
+                    :class="[
+                      selectedCategory === 'all' 
+                        ? 'opacity-100 scale-100'
+                        : selectedCategory === element.category
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-60 scale-100 dimmed-element'
+                    ]"
              :style="{
                backgroundColor: getCategoryColor(element.category),
                gridColumn: 4 + (element.atomicNumber - 90),
@@ -278,6 +284,13 @@ const getCategoryDisplayName = (category: string): string => {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   z-index: 10;
+}
+
+
+
+.dimmed-element {
+  filter: brightness(0.5) contrast(0.7) saturate(0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .atomic-number {
