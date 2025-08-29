@@ -36,10 +36,4 @@ export interface LearningTip {
   difficulty: 'beginner' | 'intermediate' | 'advanced'
 }
 
-export interface Curiosity {
-  id: number
-  title: string
-  description: string
-  category: 'history' | 'science' | 'fun' | 'discovery'
-  relatedElements?: string[]
-}
+

@@ -185,6 +185,8 @@ const isOpen = computed({
   set: (value: boolean) => emit('update:modelValue', value)
 })
 
+
+
 // Watch para manejar el scroll del body cuando el modal se abre/cierra
 watch(isOpen, (newValue) => {
   if (newValue) {

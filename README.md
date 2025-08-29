@@ -119,6 +119,31 @@ El proyecto utiliza ESLint con configuraciones específicas para Vue 3 y TypeScr
 
 ## 🤝 Contribución
 
+### Editar Datos Interesantes
+
+¡Ayúdanos a mejorar los datos interesantes de los elementos! Puedes editar los datos que aparecen en el modal cuando los usuarios hagan clic en cualquier elemento.
+
+**Cómo contribuir:**
+1. Abre `src/data/elements.ts` para datos básicos
+2. Abre `src/data/completeElements.ts` para datos detallados
+3. Edita el array `interestingFacts` del elemento que quieras mejorar
+4. Prueba haciendo clic en el elemento en la tabla periódica
+5. ¡Listo! Los cambios aparecerán en el modal
+
+**Formato:**
+```typescript
+interestingFacts: [
+  "Dato interesante 1",
+  "Dato interesante 2",
+  "Dato interesante 3"
+]
+```
+
+**Documentación detallada:**
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - Guía completa para editar datos interesantes
+
+### Contribución General
+
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
